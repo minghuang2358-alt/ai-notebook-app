@@ -19,7 +19,7 @@ if img_file_buffer is not None:
     img = Image.open(img_file_buffer)
     with st.spinner('AI 正在讀取手寫文字...'):
         try:
-            model = genai.GenerativeModel('models/gemini-1.5-flash')
+            model = genai.GenerativeModel(model_name="gemini-1.5-flash")
             prompt = "請精確辨識附圖中的手寫繁體中文內容，並依據專案、日期、成員、筆記、待辦、總結等欄位進行整理。"
             response = model.generate_content([prompt, img])
             
